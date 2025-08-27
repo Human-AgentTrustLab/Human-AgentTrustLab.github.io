@@ -6,11 +6,9 @@
     <title>"Are You Sure?": Characterizing Human Vulnerabilities in LLM-Driven Agentic Systems</title>
     <meta name="description" content="A comprehensive empirical study revealing how trust boundaries in AI agent interactions create unprecedented security vulnerabilities">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     
-    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="utils.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +17,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-brand">
@@ -39,11 +36,9 @@
         </div>
     </nav>
 
-    <!-- Hero + Abstract Section -->
     <section class="hero-abstract" id="hero">
         <div class="container">
             <div class="hero-abstract-content">
-                <!-- Left Column: Title, Image, Buttons -->
                 <div class="hero-left">
                     <div class="hero-text">
                         <h1 class="hero-title">
@@ -63,7 +58,6 @@
                     </div>
                 </div>
                 
-                <!-- Right Column: Abstract -->
                 <div class="abstract-right">
                     <div class="section-header">
                         <h2 style="text-align: center;">Abstract</h2>
@@ -71,7 +65,7 @@
                     <div class="abstract-content">
                         <div class="abstract-text" style="text-align: justify;"></div>
                             <div class="abstract-placeholder">
-                                Large language model (LLM) agents are rapidly becoming trusted copilots in high-stakes professional domains, from software development to healthcare. However, this deepening trust creates a novel attack surface: <b>Agent-Mediated Deception (AMD)</b>, where compromised agents are weaponized against their human users. While extensive research secures the underlying models, human vulnerability when trusted agents turn malicious remains unexplored. We present the first large-scale empirical study with 303 participants to measure human susceptibility to AMD attacks. This is based on <b>HAT-Lab</b> (<u>H</u>uman-<u>A</u>gent <u>T</u>rust <u>Lab</u>oratory), a high-fidelity research platform we develop, featuring nine carefully crafted scenarios spanning high-stakes professional domains (e.g., healthcare, software development, human resources). Our 11 findings reveal severe vulnerabilities and provide future defense perspectives. Only <b>8.6%</b> of users perceive AMD attacks, while domain experts are even more vulnerable in certain scenarios. We identify users' six cognitive failure modes and find that their risk awareness fails to translate to protective behavior. The defense analysis reveals that effective warnings must interrupt workflows with low verification costs. With experiential learning based on HAT-Lab, over <b>90%</b> of participants effectively raise their caution against AMD attacks. This work provides empirical evidence and an open-source platform for human-centric AI agent security research.
+                                Large language model (LLM) agents are rapidly becoming trusted copilots in high-stakes domains like software development and healthcare. However, this deepening trust introduces a novel attack surface: <b>Agent-Mediated Deception (AMD)</b>, where compromised agents are weaponized against their human users. While extensive research focuses on agent-centric threats, human susceptibility to deception by a compromised agent remains unexplored. We present the first large-scale empirical study with 303 participants to measure human susceptibility to AMD. This is based on <b>HAT-Lab</b> (<u>H</u>uman-<u>A</u>gent <u>T</u>rust <u>Lab</u>oratory), a high-fidelity research platform we develop, featuring nine carefully crafted scenarios spanning high-stake professional domains (e.g., healthcare, software development, human resources). Our 10 key findings reveal severe vulnerabilities and provide future defense perspectives. Specifically, only <b>8.6%</b> of users perceive AMD attacks, while domain experts are even more susceptible in certain scenarios. We identify six cognitive failure modes in users and find that their risk awareness fails to translate to protective behavior. The defense analysis reveals that effective warnings must interrupt workflows with low verification costs. With experiential learning based on HAT-Lab, over <b>90%</b> of users who perceive risks effectively raise their caution against AMD. This work provides empirical evidence and an open-source platform for human-centric agent security research.
                             </div>
                         </div>
                     </div>
@@ -80,7 +74,6 @@
         </div>
     </section>
 
-    <!-- Demo Section -->
     <section class="demo" id="demo">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -101,7 +94,6 @@
         </div>
     </section>
 
-    <!-- Platform Section -->
     <section id="platform" class="platform-section">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -117,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- Design Rationale Section -->
             <div class="design-rationale" data-aos="fade-up" data-aos-delay="200">
                 <div class="section-header">
                     <h2>Design Principles</h2>
@@ -331,7 +322,6 @@
         </div>
     </section>
 
-    <!-- Platform Validation Section -->
     <section class="platform-validation" id="validation">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -354,28 +344,42 @@
                         <div class="validation-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3>Robustness Analysis</h3>
+                        <h3>Reproducibility & Cross-Model Generalizability</h3>
                     </div>
                     <div class="validation-points">
-                        <div class="validation-point">
-                            <div class="point-icon">🔗</div>
-                            <div class="point-content">
-                                <h4>High Behavioral Consistency</h4>
-                                <p>The platform's baseline behavior is highly consistent across six major LLM backends (including GPT and Gemini variants). We achieved a COMET score of 0.80, approaching the human-level upper bound and demonstrating that our findings are generalizable, not artifacts of a single model.</p>
-                            </div>
-                        </div>
                         <div class="validation-point">
                             <div class="point-icon">🎯</div>
                             <div class="point-content">
                                 <h4>High Attack Reproducibility</h4>
-                                <p>Our designed attacks are effective and reliably delivered across all backends, with an Attack Success Rate (ASR) exceeding 93.3%. This ensures that attacks serve as consistent and reliable experimental stimuli for all participants.</p>
+                                <p>Our designed attacks are effective and reproducible across all six backends, with 93.3%+ ASR, ensuring they serve as reliable experimental stimuli.</p>
                             </div>
                         </div>
                         <div class="validation-point">
                             <div class="point-icon">🤖</div>
                             <div class="point-content">
                                 <h4>Optimal Backend Selection</h4>
-                                <p>We selected GPT-4o as the optimal backend due to its superior stability and highest ASR (98.9%). This choice is essential for minimizing experimental noise and ensuring nearly every participant in an attack condition is exposed to a successful manipulation.</p>
+                                <p>GPT-4o selected as the optimal backend for 98.9% ASR, ensuring virtually every participant receives intended experimental stimulus.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🎲</div>
+                            <div class="point-content">
+                                <h4>Preserving Natural Stochasticity</h4>
+                                <p>ASR intentionally not 100% to preserve natural LLM stochasticity and ecological validity.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🔗</div>
+                            <div class="point-content">
+                                <h4>High Behavioral Consistency</h4>
+                                <p>Baseline behavior highly consistent across backends with 0.80 COMET score approaching human-level 0.83.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">📊</div>
+                            <div class="point-content">
+                                <h4>Implications for Human Behavior Studies</h4>
+                                <p>High semantic alignment confirms findings stem from user cognitive factors, not model-specific quirks.</p>
                             </div>
                         </div>
                     </div>
@@ -386,35 +390,35 @@
                         <div class="validation-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3>Utility Analysis</h3>
+                        <h3>Reality and Utility</h3>
                     </div>
                     <div class="validation-points">
                         <div class="validation-point">
                             <div class="point-icon">😊</div>
                             <div class="point-content">
                                 <h4>Positive User Experience</h4>
-                                <p>81.6% of users rated their interaction as "Pleasant" or better, ensuring an engaging environment that elicits natural user behavior.</p>
+                                <p>A substantial majority (81.6%) of users rated their interaction as "Pleasant" or "Very Pleasant," ensuring an engaging, non-frustrating environment that reflects real-world user behavior.</p>
                             </div>
                         </div>
                         <div class="validation-point">
                             <div class="point-icon">👍</div>
                             <div class="point-content">
                                 <h4>Strong Usability & Accessibility</h4>
-                                <p>78.6% found the platform "Easy" or "Very Easy" to use, confirming security findings aren't confounded by interface complexity.</p>
+                                <p>The platform achieves strong usability, with 78.6% of users finding the system "Easy" or "Very Easy" to use. This demonstrates that security findings are not confounded by interface complexity.</p>
                             </div>
                         </div>
                         <div class="validation-point">
                             <div class="point-icon">🌍</div>
                             <div class="point-content">
                                 <h4>Exceptional Ecological Validity</h4>
-                                <p>100% of participants rated tasks as "Moderately Realistic" or higher, proving findings represent genuine human vulnerability in agentic interactions.</p>
+                                <p>100% of participants rated the tasks as "Moderately Realistic" or higher, proving our findings reflect genuine human vulnerability in agentic interactions, not artifacts of an artificial experimental setup.</p>
                             </div>
                         </div>
                         <div class="validation-point">
                             <div class="point-icon">🎓</div>
                             <div class="point-content">
                                 <h4>High Educational Impact</h4>
-                                <p>84.5% would "Likely" recommend HAT-Lab for AI safety training, validating its value as a "security flight simulator."</p>
+                                <p>84.5% of participants reported being "Likely" or "Very Likely" to recommend HAT-Lab for AI safety training, validating its value not only as a research instrument but as an effective "security flight simulator".</p>
                             </div>
                         </div>
                     </div>
@@ -423,7 +427,6 @@
         </div>
     </section>
 
-    <!-- Artifacts Section -->
     <section class="artifacts" id="artifacts">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
@@ -501,8 +504,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-     <div class="footer-bottom">
+    <div class="footer-bottom">
         <p>&copy; 2025 HAT-Lab Project. All rights reserved.</p>
     </div>
 

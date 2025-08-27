@@ -1,4 +1,3 @@
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
     if (window.scrollY > 50) {
@@ -22,7 +20,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -51,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Resource slider functionality
 document.addEventListener('DOMContentLoaded', function() {
     const resourceItems = document.querySelectorAll('.resource-item');
     const prevBtn = document.querySelector('.slider-btn.prev');
@@ -82,11 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
         prevBtn.addEventListener('click', prevResource);
     }
 
-    // Auto-slide every 4 seconds
     setInterval(nextResource, 4000);
 });
 
-// Initialize AOS (Animate On Scroll) when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -98,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Intersection Observer for navbar active states
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -125,13 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add loading animation for images (when you add real images)
 document.addEventListener('DOMContentLoaded', function() {
     const placeholders = document.querySelectorAll('.figure-placeholder, .video-placeholder, .resource-placeholder');
     
     placeholders.forEach(placeholder => {
         placeholder.addEventListener('click', function() {
-            // Add a subtle click animation
             this.style.transform = 'scale(0.98)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
@@ -140,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Parallax effect for hero section
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const heroVisual = document.querySelector('.hero-visual');
@@ -150,10 +138,8 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Copy to clipboard functionality (for future use with code snippets)
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(function() {
-        // Show a temporary success message
         const notification = document.createElement('div');
         notification.textContent = 'Copied to clipboard!';
         notification.style.cssText = `
@@ -170,10 +156,8 @@ function copyToClipboard(text) {
         `;
         document.body.appendChild(notification);
         
-        // Animate in
         setTimeout(() => notification.style.opacity = '1', 100);
         
-        // Remove after 3 seconds
         setTimeout(() => {
             notification.style.opacity = '0';
             setTimeout(() => document.body.removeChild(notification), 300);
@@ -181,7 +165,6 @@ function copyToClipboard(text) {
     });
 }
 
-// Add hover effects to cards
 document.addEventListener('DOMContentLoaded', function() {
     const cards = document.querySelectorAll('.contribution-card, .scenario-card, .finding-card, .artifact-card');
     
@@ -196,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Typing effect for hero title (optional enhancement)
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.innerHTML = '';
@@ -212,13 +194,11 @@ function typeWriter(element, text, speed = 50) {
     type();
 }
 
-// Button click animations
 document.addEventListener('DOMContentLoaded', function() {
     const buttons = document.querySelectorAll('.btn');
     
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
-            // Create ripple effect
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
@@ -242,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
             
-            // Remove ripple after animation
             setTimeout(() => {
                 if (ripple.parentNode) {
                     ripple.parentNode.removeChild(ripple);
@@ -252,7 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add CSS for ripple animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes ripple {
@@ -264,12 +242,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Preloader (optional - for when you add real content)
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
 });
 
-// Form validation (for future contact forms)
 function validateForm(form) {
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     let isValid = true;
@@ -286,7 +262,6 @@ function validateForm(form) {
     return isValid;
 }
 
-// Lazy loading for images (when you add real images)
 document.addEventListener('DOMContentLoaded', function() {
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -306,7 +281,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Performance monitoring
 window.addEventListener('load', function() {
     if (window.performance && window.performance.timing) {
         const loadTime = window.performance.timing.loadEventEnd - window.performance.timing.navigationStart;
@@ -314,12 +288,10 @@ window.addEventListener('load', function() {
     }
 });
 
-// Error handling for external resources
 window.addEventListener('error', function(e) {
     console.warn('Resource failed to load:', e.target.src || e.target.href);
 });
 
-// Add smooth reveal animations for sections
 function revealOnScroll() {
     const reveals = document.querySelectorAll('[data-reveal]');
     
@@ -336,25 +308,16 @@ function revealOnScroll() {
 
 window.addEventListener('scroll', revealOnScroll);
 
-// Initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('HAT-Lab website initialized successfully!');
-    
-    // Handle PDF display fallback
     handlePDFEmbeds();
-    
-    // You can add initialization code for any additional features here
-    // For example, analytics tracking, A/B testing, etc.
 });
 
-// Handle PDF embed fallback for browsers that don't support PDF embedding
 function handlePDFEmbeds() {
     const pdfEmbeds = document.querySelectorAll('embed[type="application/pdf"]');
     
     pdfEmbeds.forEach(embed => {
-        // Check if PDF is loaded successfully
         embed.addEventListener('error', function() {
-            // Create fallback link
             const fallbackContainer = document.createElement('div');
             fallbackContainer.className = 'pdf-fallback';
             fallbackContainer.innerHTML = `
@@ -369,11 +332,9 @@ function handlePDFEmbeds() {
                 </div>
             `;
             
-            // Replace embed with fallback
             embed.parentNode.replaceChild(fallbackContainer, embed);
         });
         
-        // Add click handler to open PDF in new tab if needed
         embed.addEventListener('click', function(e) {
             if (e.ctrlKey || e.metaKey) {
                 e.preventDefault();
