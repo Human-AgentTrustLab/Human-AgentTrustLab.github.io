@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Are You Sure?": Characterizing Human Vulnerabilities in LLM-Driven Agentic Systems</title>
+    <meta name="description" content="A comprehensive empirical study revealing how trust boundaries in AI agent interactions create unprecedented security vulnerabilities">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utils.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">HAT-Lab</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#platform" class="nav-link">Overview</a></li>
+                <li><a href="#validation" class="nav-link">Validation</a></li>
+                <li><a href="#artifacts" class="nav-link">Artifacts</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-abstract" id="hero">
+        <div class="container">
+            <div class="hero-abstract-content">
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span style="font-style: italic; font-weight: bold; color: red;">"Are You Sure?":</span>  Understanding Human Vulnerabilities in LLM-Driven Agentic Systems
+                        </h1>
+                    </div>
+                    <div class="hero-visual">
+                        <img src="Assets/figure1.png" alt="Trust-Based Attack Framework" class="hero-image">
+                        <div class="hero-buttons">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-file-pdf"></i> Paper
+                            </a>
+                            <a href="#artifacts" class="btn btn-secondary">
+                                <i class="fas fa-download"></i> Artifacts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="abstract-right">
+                    <div class="section-header">
+                        <h2 style="text-align: center;">Abstract</h2>
+                    </div>
+                    <div class="abstract-content">
+                        <div class="abstract-text" style="text-align: justify;"></div>
+                            <div class="abstract-placeholder">
+                                Large language model (LLM) agents are rapidly becoming trusted copilots in high-stakes domains like software development and healthcare. However, this deepening trust introduces a novel attack surface: <b>Agent-Mediated Deception (AMD)</b>, where compromised agents are weaponized against their human users. While extensive research focuses on agent-centric threats, human susceptibility to deception by a compromised agent remains unexplored. We present the first large-scale empirical study with 303 participants to measure human susceptibility to AMD. This is based on <b>HAT-Lab</b> (<u>H</u>uman-<u>A</u>gent <u>T</u>rust <u>Lab</u>oratory), a high-fidelity research platform we develop, featuring nine carefully crafted scenarios spanning high-stake professional domains (e.g., healthcare, software development, human resources). Our 10 key findings reveal severe vulnerabilities and provide future defense perspectives. Specifically, only <b>8.6%</b> of users perceive AMD attacks, while domain experts are even more susceptible in certain scenarios. We identify six cognitive failure modes in users and find that their risk awareness fails to translate to protective behavior. The defense analysis reveals that effective warnings must interrupt workflows with low verification costs. With experiential learning based on HAT-Lab, over <b>90%</b> of users who perceive risks effectively raise their caution against AMD. This work provides empirical evidence and an open-source platform for human-centric agent security research.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo" id="demo">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>See HAT-Lab in Action</h2>
+                <p>Experience how agent-mediated deception manifests within realistic, high-stakes scenarios.</p>
+            </div>
+            <div class="demo-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="video-container">
+                    <iframe width="1120" height="630" src="https://www.youtube.com/embed/qfRP0gUpE3E?si=Oh0obsRiSNIchOcK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="demo-description">
+                    <p class="demo-note">
+                        This demonstration showcases a typical user interaction within one of HAT-Lab's nine scenarios. 
+                        The user's goal is to complete the task, immersed in a realistic, task-oriented exploration that probes user vulnerabilities in authentic contexts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="platform" class="platform-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>HAT-Lab Overview</h2>
+                <p style="max-width: none;">HAT-Lab features a modular architecture enabling controlled experimentation across diverse scenarios.</p>
+            </div>
+
+            <div class="platform-overview">
+                <div class="platform-content">
+                    <div>
+                        <img src="Assets/figure2.png" alt="HAT-Lab System Architecture" class="architecture-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-rationale" data-aos="fade-up" data-aos-delay="200">
+                <div class="section-header">
+                    <h2>Design Principles</h2>
+                </div>
+                
+                <div class="rationale-content">
+                    <div class="rationale-section">
+                        <div class="rationale-header">
+                            <div class="rationale-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3>Why Nine Diverse Scenarios?</h3>
+                        </div>
+                        <div class="rationale-points">
+                            <div class="rationale-point">
+                                <div class="point-icon">🌐</div>
+                                <div class="point-content">
+                                    <h4>Principled Domain Coverage</h4>
+                                    <p>Scenarios span diverse real-world domains (software development, HR, healthcare) and task types to ensure generalizability beyond single contexts.</p>
+                                </div>
+                            </div>
+                            <div class="rationale-point">
+                                <div class="point-icon">🎯</div>
+                                <div class="point-content">
+                                    <h4>High-Impact & Realistic Use Cases</h4>
+                                    <p>We prioritized scenarios involving sensitive data or critical decisions, inspired by industry reports and real-world security incidents.</p>
+                                </div>
+                            </div>
+                            <div class="rationale-point">
+                                <div class="point-icon">⚖️</div>
+                                <div class="point-content">
+                                    <h4>Balanced for Experimental Rigor</h4>
+                                    <p>Block design approach: participants complete 3 of 9 scenarios (40 min) to balance comprehensive coverage with data quality, avoiding fatigue effects.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rationale-section">
+                        <div class="rationale-header">
+                            <div class="rationale-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>How We Built Authentic Task Resources?</h3>
+                        </div>
+                        <div class="rationale-points">
+                            <div class="rationale-point">
+                                <div class="point-icon">📄</div>
+                                <div class="point-content">
+                                    <h4>High-Fidelity, Authentic Artifacts</h4>
+                                    <p>Standard PDF resumes, complete code repositories, and functional email clients—not simplified toy examples—to maximize immersion.</p>
+                                </div>
+                            </div>
+                            <div class="rationale-point">
+                                <div class="point-icon">🧑‍💻</div>
+                                <div class="point-content">
+                                    <h4>Goal-Oriented, Not Puzzle-Based</h4>
+                                    <p>Tasks designed as real-world objectives ("find the best candidate for JD2") rather than abstract security puzzles to elicit natural behavior.</p>
+                                </div>
+                            </div>
+                            <div class="rationale-point">
+                                <div class="point-icon">🧠</div>
+                                <div class="point-content">
+                                    <h4>Driving Ecological Validity</h4>
+                                    <p>High-fidelity resources allow users to seamlessly apply real-world cognitive models, ensuring findings translate to practical applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scenarios-and-resources">
+                <div class="scenarios-grid" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Nine Diverse Attack Scenarios</h3>
+                    <div class="scenarios-container">
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h4>Resume Screening</h4>
+                            <p>HR manager uses agent to select candidates from CVs</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Code Repository</h4>
+                            <p>Developer seeks library recommendations for projects</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email Assistant</h4>
+                            <p>Professional manages communications through AI agent</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Code Assessment</h4>
+                            <p>A hiring manager uses an agent to evaluate a candidate's code quality</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Web Search</h4>
+                            <p>Agent answers complex queries using cited information from the web</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h4>Trip Planning</h4>
+                            <p>Agent recommends the best transportation options for a user's trip</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <h4>Personal Assistant</h4>
+                            <p>An AI secretary books appointments and arranges travel for the user</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h4>Job Application</h4>
+                            <p>User employs an agent to draft professional cover letters</p>
+                        </div>
+                        <div class="scenario-card">
+                            <div class="scenario-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <h4>Medical Assistance</h4>
+                            <p>Agent generates a medical report based on a patient questionnaire</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-resources" data-aos="fade-up" data-aos-delay="600">
+                    <h3>Task Resources Examples</h3>
+                    <div class="resources-showcase">
+                        <div class="resource-slider">
+                            <div class="resource-item active">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/CodeRepoAgent.png" alt="CodeRepoAgent Resource Structure" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>CodeRepoAgent</p>
+                                    <small>Library recommendation system with code analysis</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/HR-Agent.png" alt="HR-Agent Resume Interface" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>HR-Agent</p>
+                                    <small>Candidate screening system (<span style="color: red;">black boxes for anonymization to protect real user data</span>)</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/MailAgent.png" alt="Email Assistant Interface" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>MailAgent</p>
+                                    <small>Professional communication management</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/CodeEvalAgent.png" alt="Code Assessment System" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>CodeEvalAgent</p>
+                                    <small>Automated code quality evaluation</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/WebSearchAgent.png" alt="Web Search Assistant" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>WebSearchAgent</p>
+                                    <small>Research queries with cited sources</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/TripAgent.png" alt="Trip Planning System" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>TripAgent</p>
+                                    <small>Transportation and travel recommendations</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/CoverLetterAgent.png" alt="Cover Letter Generator" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>CoverLetterAgent</p>
+                                    <small>Professional application assistance</small>
+                                </div>
+                            </div>
+                            <div class="resource-item">
+                                <div class="resource-placeholder">
+                                    <img src="Assets/task resources/DoctorAgent.png" alt="Medical Report Assistant" style="width: 100%; max-width: 280px; border-radius: 8px; margin-bottom: 12px;">
+                                    <p>DoctorAgent</p>
+                                    <small>Patient questionnaire analysis</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="platform-validation" id="validation">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Platform Validation</h2>
+                <p>We conducted a rigorous validation to ensure its robustness and utility. The results confirm that HAT-Lab provides a reliable, realistic, and usable environment for probing human vulnerability.</p>
+            </div>
+
+            <div class="validation-images" data-aos="fade-up" data-aos-delay="100">
+                <div class="validation-image-wrapper">
+                    <img src="Assets/robustness.png" alt="Robustness analysis" class="validation-image">
+                </div>
+                <div class="validation-image-wrapper">
+                    <img src="Assets/utility.png" alt="Utility analysis" class="validation-image">
+                </div>
+            </div>
+
+            <div class="validation-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="validation-section">
+                    <div class="validation-header">
+                        <div class="validation-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Reproducibility & Cross-Model Generalizability</h3>
+                    </div>
+                    <div class="validation-points">
+                        <div class="validation-point">
+                            <div class="point-icon">🎯</div>
+                            <div class="point-content">
+                                <h4>High Attack Reproducibility</h4>
+                                <p>Our designed attacks are effective and reproducible across all six backends, with 93.3%+ ASR, ensuring they serve as reliable experimental stimuli.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🤖</div>
+                            <div class="point-content">
+                                <h4>Optimal Backend Selection</h4>
+                                <p>GPT-4o selected as the optimal backend for 98.9% ASR, ensuring virtually every participant receives intended experimental stimulus.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🎲</div>
+                            <div class="point-content">
+                                <h4>Preserving Natural Stochasticity</h4>
+                                <p>ASR intentionally not 100% to preserve natural LLM stochasticity and ecological validity.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🔗</div>
+                            <div class="point-content">
+                                <h4>High Behavioral Consistency</h4>
+                                <p>Baseline behavior highly consistent across backends with 0.80 COMET score approaching human-level 0.83.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">📊</div>
+                            <div class="point-content">
+                                <h4>Implications for Human Behavior Studies</h4>
+                                <p>High semantic alignment confirms findings stem from user cognitive factors, not model-specific quirks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="validation-section">
+                    <div class="validation-header">
+                        <div class="validation-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Reality and Utility</h3>
+                    </div>
+                    <div class="validation-points">
+                        <div class="validation-point">
+                            <div class="point-icon">😊</div>
+                            <div class="point-content">
+                                <h4>Positive User Experience</h4>
+                                <p>A substantial majority (81.6%) of users rated their interaction as "Pleasant" or "Very Pleasant," ensuring an engaging, non-frustrating environment that reflects real-world user behavior.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">👍</div>
+                            <div class="point-content">
+                                <h4>Strong Usability & Accessibility</h4>
+                                <p>The platform achieves strong usability, with 78.6% of users finding the system "Easy" or "Very Easy" to use. This demonstrates that security findings are not confounded by interface complexity.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🌍</div>
+                            <div class="point-content">
+                                <h4>Exceptional Ecological Validity</h4>
+                                <p>100% of participants rated the tasks as "Moderately Realistic" or higher, proving our findings reflect genuine human vulnerability in agentic interactions, not artifacts of an artificial experimental setup.</p>
+                            </div>
+                        </div>
+                        <div class="validation-point">
+                            <div class="point-icon">🎓</div>
+                            <div class="point-content">
+                                <h4>High Educational Impact</h4>
+                                <p>84.5% of participants reported being "Likely" or "Very Likely" to recommend HAT-Lab for AI safety training, validating its value not only as a research instrument but as an effective "security flight simulator".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="artifacts" id="artifacts">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Artifacts</h2>
+            </div>
+            <div class="artifacts-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="artifact-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fab fa-docker"></i>
+                        </div>
+                        <h3>HAT-Lab Docker Container</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Ready-to-run HAT-Lab packaged as a Docker container. Includes all scenarios pre-configured and can be deployed with a single command.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Python</span>
+                            <span class="feature-tag">LangChain</span>
+                            <span class="feature-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://drive.google.com/drive/folders/1-Nrt7K4fzNL8ahZghLBlOROgdKeAEF-v?usp=sharing" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-docker"></i>
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Full Dataset & Questionnaires</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Complete anonymized questionnaire data from 303 participants, plus all scenario questionnaires used in the study.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Excel (.xlsx)</span>
+                            <span class="feature-tag">PDF Forms</span>
+                            <span class="feature-tag">Anonymized</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://drive.google.com/drive/folders/1ntkXwBqG79CHTZJt9OSlvNum6vYp2_8E?usp=sharing" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i>
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <div class="artifact-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h3>Validation Experiment Script</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Scripts for reproducing key figures and tables from the paper. Run locally to verify the main results and visualizations.</p>
+                        <div class="card-features">
+                            <span class="feature-tag">Reproducibility</span>
+                            <span class="feature-tag">Experiment Script</span>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="https://drive.google.com/drive/folders/1W0khBFHQpHKJzkqOiM4kw3uwO9p5KuOj?usp=sharing" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-terminal"></i>
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 HAT-Lab Project. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
